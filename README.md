@@ -15,7 +15,7 @@ Features include:
     - Password
     - Phone
     - Pronouns
-    - Many more, since Samantha is fully configurable. Those are just the defaults, but you can configure it to ask as many info as you want or as few info as you want (want to ask for a password, and nothing more? You can! Want to ask the user for extra info? You also can!)
+    - Many more, since Samantha is fully configurable. Those are just the defaults, but you can configure it to ask as many info as you want or as few info as you want (Want to ask for a password, and nothing more? You can! Want to ask the user for extra info? You also can!)
 - Edit those accounts:
     - Everything can be edited! Samantha is developed in a way that allows everything to be changed, including usernames and e-mails.
     - The old username can redirect to the new one while a new account with the same username  as the old one is not created.
@@ -24,5 +24,11 @@ Features include:
 - Account deletion, deleting all data:
     - The account will be completely deleted from Samantha, keeping no files of that account
     - A delay can be set (default: 30 days) before deleting the data, in case the user accidentally chooses the permanent deletion option.
+- Posts (for social media, etc)
+    - Create, edit or delete social media like posts. Posts will be saved as files (see below where they're stored), for now Samantha does not ship with a viewer.
+- Files (for file storage providers, etc)
+    - Files can be stored in the user's account, making possible the storage of files by the user. Samantha doesn't provides a file manager yet, but the files directory is created in the user's account.
+    
+
 
 **THIS README IS STILL WORK IN PROGRESS**
