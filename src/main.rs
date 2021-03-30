@@ -57,4 +57,6 @@ fn full_delete_account() {
 
 
 //
-fn post() {}
+fn post() {
+
+}
