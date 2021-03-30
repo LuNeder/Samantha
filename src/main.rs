@@ -13,7 +13,7 @@ fn main() {
     // Get command args and save it as an args variable
     let args: Vec<String> = env::args().collect();
     let option = &args[1];
-    if option = "help" {
+    if option == "--help" {
         sam_help(ver)
     }
     println!("WORK IN PROGRESS");
@@ -21,5 +21,6 @@ fn main() {
 
 fn sam_help(ver: String) {
     println!("Samantha {}", ver);
-    
+    println!("--help: Show this help list")
+
 }
