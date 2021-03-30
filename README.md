@@ -15,7 +15,7 @@ Features include:
     - Password
     - Phone
     - Pronouns
-    - Many more, since Samantha is fully configurable. Those are just the defaults, but you can configure it to ask as many info as you want or as few info as you want (want to ask username, and nothing more? You can! Want to ask the user for extra info? You also can!)
+    - Many more, since Samantha is fully configurable. Those are just the defaults, but you can configure it to ask as many info as you want or as few info as you want (want to ask for a password, and nothing more? You can! Want to ask the user for extra info? You also can!)
 - Edit those accounts:
     - Everything can be edited! Samantha is developed in a way that allows everything to be changed, including usernames and e-mails.
     - The old username can redirect to the new one while a new account with the same username  as the old one is not created.
