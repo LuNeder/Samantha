@@ -61,7 +61,7 @@ fn init() {
     let newconfigpath = samantha_root.to_owned() + "/Config.toml";
     rootdir(samantha_root.to_string());
     moveconfig(configpath.to_string(), newconfigpath.to_string());
-
+ 
 }
 
 fn rootdir(samantha_root: String) -> std::io::Result<()> {
