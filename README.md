@@ -4,8 +4,7 @@ Samantha - or, for short, Sam - is the Super Account Manager
 ## But what is it?
 Sam can create and manage accounts, for any purpose you'd like. An internal blog, a social media website, a file server or whatever you can do with it!
 
-Features include:
-
+## Features include:
 - Fully customizeable:
     - Most of the features below can be disabled or heavily configurated/modified
 - Create accounts in Sam's filesystem, that can include:
@@ -25,7 +24,7 @@ Features include:
     - The account will be completely deleted from Samantha, keeping no files of that account
     - A delay can be set (default: 30 days) before deleting the data, in case the user accidentally chooses the permanent deletion option.
 - Posts (for social media, etc)
-    - Create, edit or delete social media like posts. Posts will be saved as files (see below where they're stored), for now Samantha does not ship with a viewer.
+    - Create, edit or delete social media like posts. Posts will be saved as files (see below where they're stored)
 - Files (for file storage providers, etc)
     - Files can be stored in the user's account, making possible the storage of files by the user. Samantha doesn't provides a file manager yet, but the files directory is created in the user's account.
     
