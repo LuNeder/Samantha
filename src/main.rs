@@ -32,8 +32,9 @@ fn main() {
 //Help
 fn sam_help(ver: String) {
     println!("Samantha {}", ver);
-    println!("IMPORTANT - All file paths must be absolute. Do not use, unless it's extremely necessary, relative paths (like ./ or ../), as thet were not tested and might fail.");
+    println!("IMPORTANT - All file paths must be absolute. Do not use relative paths (like ./ or ../), they will not work.");
     println!("IMPORTANT - While not required, we recommend you to NOT add spaces to the filenames or to the directory names");
+    println!("IMPORTANT - Run Samantha as root/administrator or make sure your user has read and write permissions on your Samantha root");
     println!("--help: Show this help list");
     println!("--init [/PATH/TO/Config.toml]: Configure Samantha for the first time, following the Config.toml file with the options you chose.");
     println!("--create-account")
@@ -59,11 +60,10 @@ fn init() {
     println!("{:#?}", config);
     let samantha_root = &config["samantha_root"];
     let newconfigpath = samantha_root.to_owned() + "/Config.toml";
-    rootdir(samantha_root.to_string());
-    moveconfig(configpath.to_string(), newconfigpath.to_string());
- 
-}
+    rootdir(samantha_root.to_string()).expect("error creating Samantha root");
+    moveconfig(configpath.to_string(), newconfigpath.to_string()).expect("error copying Config.toml");
 
+}
 fn rootdir(samantha_root: String) -> std::io::Result<()> {
     println!("Samantha root: {}", samantha_root);
     fs::create_dir_all(samantha_root)?;
