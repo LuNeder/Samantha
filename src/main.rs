@@ -72,6 +72,7 @@ fn rootdir(samantha_root: String) -> std::io::Result<()> {
     fs::create_dir_all(samantha_root)?;
     Ok(())
 }
+//Function that copies Config.toml to Samantha root
 fn moveconfig(configpath: String, newconfigpath: String) -> std::io::Result<()> {
     println!("Config: {}", newconfigpath);
     fs::copy(configpath, newconfigpath)?;
