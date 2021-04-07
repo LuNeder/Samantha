@@ -31,3 +31,8 @@ Sam can create and manage accounts, for any purpose you'd like. An internal blog
 
 
 **THIS README IS STILL WORK IN PROGRESS**
+
+## The name
+Sam stands for Super Account Manager and Sam is short for Samantha (actually, the Samantha name came before the Super Account Manager thing)
+
+Samantha uses she/her pronouns
