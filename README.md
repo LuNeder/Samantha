@@ -2,7 +2,7 @@
 Samantha - or, for short, Sam - is the Super Account Manager
 
 ## But what is it?
-Sam can create and manage accounts, for any purpose you'd like. An internal blog, a social media website, a file server or whatever you can do with it!
+Sam can create and manage accounts, for any purpose you'd like. An internal blog, a social media website, a file server or whatever you want!
 
 ## Features include:
 - Fully customizeable:
@@ -27,7 +27,11 @@ Sam can create and manage accounts, for any purpose you'd like. An internal blog
     - Create, edit or delete social media like posts. Posts will be saved as files (see below where they're stored)
 - Files (for file storage providers, etc)
     - Files can be stored in the user's account, making possible the storage of files by the user. Samantha doesn't provides a file manager yet, but the files directory is created in the user's account.
-    
+- Login names: Username, e-mail, phone and account ID can be used to login to the account, together with the password. Samantha will automatically detect the correct method.
+- Authentication: Samantha can be given a login and a password and return if the password was correct or incorrect, as well as if the login exists or not.
+- Safety features
+    - Crash or machine error protection: Before editing accounts, posts, or something else, Samantha will create a backup of it, ensuring that nothing will be lost in case of an error. These backups will be deleted automatically once the operation is completed. If an error happens or Samantha crashes before the operation is completed, the backup can be restored and nothing will be lost.
+    - Human error protection: Before editing accounts, posts, or something else, Samantha can create a backup of it. These backups will be available until you decide to remove them and can be restored at any time.
 
 
 **THIS README IS STILL WORK IN PROGRESS**
