@@ -12,8 +12,8 @@ use std::path::Path; // required for file paths
 use std::collections::HashMap; // required for .toml files
 use glob::glob; // required to get .toml files
 use std::io; // a bunch of stuff
-//use std::fs::File; //create text files
-//use std::io::prelude::*; //create text files
+use std::fs::File; //create text files
+use std::io::prelude::*; //create text files
 
 fn main() {
     let ver: String = "1.0.0".to_string(); //sets ver vaiable to current Samantha version
@@ -52,7 +52,7 @@ fn init() {
     settings
         .merge(glob(configpath)
             .unwrap()
-            .map(|path| File::from(path.unwrap()))
+            .map(|path| config::File::from(path.unwrap()))
             .collect::<Vec<_>>())
         .unwrap();
 // Save the Config.toml as a config variable as a HashMap
@@ -65,7 +65,7 @@ fn init() {
     let newconfigpath = samantha_root.to_owned() + "/Config.toml"; // path where Config.toml will be copied to
     rootdir(samantha_root.to_string()).expect("error creating Samantha root"); //runs the Function that creates the Samantha root directory
     moveconfig(configpath.to_string(), newconfigpath.to_string()).expect("error copying Config.toml");//Runs the Function that copies Config.toml to Samantha root
-    //randomnameidk(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")
+    randomnameidk(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")
 
 }
 //Function that creates the Samantha root directory
@@ -81,11 +81,11 @@ fn moveconfig(configpath: String, newconfigpath: String) -> std::io::Result<()> 
     Ok(())
 }
 //Function that creates a text file at / telling Sam where her root is
-//fn randomnameidk(samantha_root: String) -> std::io::Result<()> {
-//    let samrootindicator = File::create("/samantha_root")?;
-//    samrootindicator.write(samantha_root)?;
-//    Ok(())
-//}
+fn randomnameidk(samantha_root: String) -> std::io::Result<()> {
+    let samrootindicator = fs::File::create("/samantha_root")?;
+    samrootindicator.write_all(samantha_root)?;
+    Ok(())
+}
 
 // Create new account
 fn add_account() {
