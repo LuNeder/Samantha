@@ -4,6 +4,8 @@ Samantha - or, for short, Sam - is the Super Account Manager
 ## But what is it?
 Sam can create and manage accounts, for any purpose you'd like. An internal blog, a social media website, a file server or whatever you want!
 
+**THIS README IS STILL WORK IN PROGRESS AND INCLUDES PLANED (AND NOT PLANED) FEATURES, MOST OF THOSE ARE NOT READY YET**
+
 ## Planed Features include:
 - Fully customizeable:
     - Most of the features below can be disabled or heavily configurated/modified
@@ -34,7 +36,6 @@ Sam can create and manage accounts, for any purpose you'd like. An internal blog
     - Human error protection: Before editing accounts, posts, or something else, Samantha can create a backup of it. These backups will be available until you decide to remove them and can be restored at any time.
 
 
-**THIS README IS STILL WORK IN PROGRESS**
 
 ## Idk the title for this yet
 - Samantha can be run as-is at terminal interactivelly. If you need Samantha to run in backend using values given by another program or by a file, that is possible with minor modifications to the code. 
