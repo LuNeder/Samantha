@@ -34,12 +34,24 @@ fn main() {
 // Print Help
 fn sam_help(ver: String) {
     println!("Samantha {}", ver);
+    checkifinstalled();
     println!("IMPORTANT - All file paths must be absolute. Do not use relative paths (like ./ or ../), they will not work.");
     println!("IMPORTANT - While not required, we recommend you to NOT add spaces to the filenames or to the directory names");
     println!("IMPORTANT - Run Samantha as root/administrator or make sure your user has read and write permissions on your Samantha root");
     println!("--help: Show this help list");
     println!("--init [/PATH/TO/Config.toml]: Configure Samantha for the first time, following the Config.toml file with the options you chose.");
     println!("--create-account")
+}
+
+
+fn checkifinstalled() {
+    let installed = Path::new("/samantha_root").exists();
+    if installed == true {
+        let samantha_root = fs::read_to_string("/samantha_root");
+        println!("Samantha is installed and her root is at {}", samantha_root);
+    } else {
+        println!("Samantha is not installed");
+    }
 }
 
 
