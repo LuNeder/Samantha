@@ -48,7 +48,7 @@ fn checkifinstalled() {
     let installed = Path::new("/samantha_root").exists();
     if installed == true {
         let samantha_root = fs::read_to_string("/samantha_root");
-        println!("Samantha is installed and her root is at {}", samantha_root);
+        println!("Samantha is installed and her root is at ");
     } else {
         println!("Samantha is not installed");
     }
