@@ -64,7 +64,7 @@ fn init() {
     let newconfigpath = samantha_root.to_owned() + "/Config.toml"; // path where Config.toml will be copied to
     rootdir(samantha_root.to_string()).expect("error creating Samantha root"); //runs the Function that creates the Samantha root directory
     moveconfig(configpath.to_string(), newconfigpath.to_string()).expect("error copying Config.toml");//Runs the Function that copies Config.toml to Samantha root
-    randomnameidk(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")
+    rootindicator(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")
 
 }
 //Function that creates the Samantha root directory
@@ -80,7 +80,7 @@ fn moveconfig(configpath: String, newconfigpath: String) -> std::io::Result<()> 
     Ok(())
 }
 //Function that creates a text file at / telling Sam where her root is
-fn randomnameidk(samantha_root: String) -> std::io::Result<()> {
+fn rootindicator(samantha_root: String) -> std::io::Result<()> {
     let mut samrootindicator = fs::File::create("/samantha_root")?;
     samrootindicator.write_all(samantha_root.as_bytes())?;
     Ok(())
