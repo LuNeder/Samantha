@@ -4,7 +4,7 @@ Samantha - or, for short, Sam - is the Super Account Manager
 ## But what is it?
 Sam can create and manage accounts, for any purpose you'd like. An internal blog, a social media website, a file server or whatever you want!
 
-**THIS README IS STILL WORK IN PROGRESS AND INCLUDES PLANED (AND NOT PLANED) FEATURES, MOST OF THOSE ARE NOT READY YET**
+**THIS README IS STILL WORK IN PROGRESS AND INCLUDES PLANED (AND NOT PLANED) FEATURES SO I CAN PLAN WHAT TO CODE FIRST AND WHAT TO CODE LATER, MOST OF THOSE ARE NOT READY YET**
 
 ## Planed Features include:
 - Fully customizeable:
