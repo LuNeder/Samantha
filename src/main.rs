@@ -82,8 +82,8 @@ fn moveconfig(configpath: String, newconfigpath: String) -> std::io::Result<()> 
 }
 //Function that creates a text file at / telling Sam where her root is
 fn randomnameidk(samantha_root: String) -> std::io::Result<()> {
-    let samrootindicator = fs::File::create("/samantha_root")?;
-    samrootindicator.write_all(samantha_root)?;
+    let mut samrootindicator = fs::File::create("/samantha_root")?;
+    samrootindicator.write_all(samantha_root.as_bytes())?;
     Ok(())
 }
 
