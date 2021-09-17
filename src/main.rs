@@ -14,6 +14,7 @@ use glob::glob; // required to get .toml files
 use std::io; // a bunch of stuff
 use std::io::prelude::*; //create text files
 
+
 fn main() {
     let ver: String = "1.0.0".to_string(); //sets ver vaiable to current Samantha version
 
@@ -67,24 +68,31 @@ fn init() {
     rootindicator(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")
 
 }
+
+
 //Function that creates the Samantha root directory
 fn rootdir(samantha_root: String) -> std::io::Result<()> {
     println!("Samantha root: {}", samantha_root);
     fs::create_dir_all(samantha_root)?;
     Ok(())
 }
+
+
 //Function that copies Config.toml to Samantha root
 fn moveconfig(configpath: String, newconfigpath: String) -> std::io::Result<()> {
     println!("Config: {}", newconfigpath);
     fs::copy(configpath, newconfigpath)?;
     Ok(())
 }
+
+
 //Function that creates a text file at / telling Sam where her root is
 fn rootindicator(samantha_root: String) -> std::io::Result<()> {
     let mut samrootindicator = fs::File::create("/samantha_root")?;
     samrootindicator.write_all(samantha_root.as_bytes())?;
     Ok(())
 }
+
 
 // Create new account
 fn add_account() {
