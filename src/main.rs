@@ -49,7 +49,7 @@ fn checkifinstalled() {
     let installed = Path::new("/samantha_root").exists();
     if installed == true {
         let samantha_root = fs::read_to_string("/samantha_root");
-        println!("Samantha is installed and her root is at {:#?}", samantha_root); 
+        println!("Samantha is installed and her root is at {:?}", samantha_root);
     } else {
         println!("Samantha is not installed");
     }
@@ -78,7 +78,7 @@ fn init() {
     let newconfigpath = samantha_root.to_owned() + "/Config.toml"; // path where Config.toml will be copied to
     rootdir(samantha_root.to_string()).expect("error creating Samantha root"); //runs the Function that creates the Samantha root directory
     moveconfig(configpath.to_string(), newconfigpath.to_string()).expect("error copying Config.toml");//Runs the Function that copies Config.toml to Samantha root
-    rootindicator(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")
+    rootindicator(samantha_root.to_string()).expect("error creating file at / indicating Samantha root")//Runs the Function that creates a text file at / telling Sam where her root is
 
 }
 
