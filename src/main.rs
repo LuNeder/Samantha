@@ -6,13 +6,12 @@ extern crate config;
 extern crate glob;
 use config::*; //required for config.toml, account.toml and other .toml files
 use std::env; //required for grabbing command line args
-use std::fs; //required to move and rename fles (fs::rename), to copy files (fs::copy) and to create directories (fs::create_dir_all)
+use std::fs; //required to move and rename fles (fs::rename), to copy files (fs::copy), to create directories (fs::create_dir_all) and to create files (fs::File)
 use symlink::*; //required to create symbolic links
 use std::path::Path; // required for file paths
 use std::collections::HashMap; // required for .toml files
 use glob::glob; // required to get .toml files
 use std::io; // a bunch of stuff
-use std::fs::File; //create text files
 use std::io::prelude::*; //create text files
 
 fn main() {
