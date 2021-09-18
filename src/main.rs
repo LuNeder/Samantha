@@ -128,9 +128,9 @@ fn add_account() {
         .try_into::<HashMap<String, String>>()
         .unwrap();
     //println!("{:#?}", config); //prints the config
-    if config["ask_name"] == "True" {let name: String; println!("Name: "); scan!("{}", name); println!("{}", name)};
-
-
+    let name: String = if config["ask_name"] == "True" {let name: String; println!("Name: "); scan!("{}", name); println!("{}", name); name } else {let no: String = "".to_string(); no};
+    let username: String = if config["ask_username"] == "True" {let username: String; println!("@userame: "); scan!("{}", username); let username: String = if username.starts_with("@") {username} else {let username: String = "@".to_string() + &username; username }; println!("{}", username); username} else {let no: String = "".to_string(); no};
+    println!("{}, {}, ", name, username);
 }
 
 
