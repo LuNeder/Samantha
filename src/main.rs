@@ -157,7 +157,41 @@ fn add_account() {
         email } else {
             let no: String = "".to_string(); //leave email empty if config tells not to ask for it
             no }; //end of email
-    println!("{}, {}, {}", name, username, email);
+    let phone: String = if config["ask_phone"] == "True" { //start setting the phone variable
+        let phone: String;
+        println!("Phone: ");
+        scan!("{}", phone); //ask for phone input and saves as a phone variable
+        println!("{}", phone);
+        phone } else {
+            let no: String = "".to_string(); //leave empty if config tells not to ask for it
+            no }; //end of phone
+    let pronouns: String = if config["ask_pronouns"] == "True" { //start setting the pronouns variable
+        let pronouns: String;
+        println!("Pronouns: ");
+        scan!("{}", pronouns); //ask for pronouns input and saves as a pronouns variable
+        println!("{}", pronouns);
+        pronouns } else {
+            let no: String = "".to_string(); //leave empty if config tells not to ask for it
+            no }; //end of pronouns
+    let gender: String = if config["ask_gender"] == "True" { //start setting the gender variable
+        let gender: String;
+        println!("Gender: ");
+        scan!("{}", gender); //ask for gender input and saves as a gender variable
+        println!("{}", gender);
+        gender } else {
+            let no: String = "".to_string(); //leave empty if config tells not to ask for it
+            no }; //end of gender
+
+    let birthday: String = if config["ask_birthday"] == "True" { //start setting the birthday variable
+        let birthday: String;
+        println!("Birthday: ");
+        scan!("{}", birthday); //ask for birthday input and saves as a birthday variable
+        println!("{}", birthday);
+        birthday } else {
+            let no: String = "".to_string(); //leave empty if config tells not to ask for it
+            no }; //end of birthday
+
+    println!("{}, {}, {}, {}", name, username, email, phone);
 }
 
 
