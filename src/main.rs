@@ -13,6 +13,7 @@ use std::collections::HashMap; // required for .toml files
 use glob::glob; // required to get .toml files
 use std::io; // a bunch of stuff
 use std::io::prelude::*; //create text files
+use text_io::scan; //ask for input
 
 
 fn main() {
@@ -126,7 +127,9 @@ fn add_account() {
         settings
         .try_into::<HashMap<String, String>>()
         .unwrap();
-    println!("{:#?}", config); //prints the config
+    //println!("{:#?}", config); //prints the config
+    if config["ask_name"] == "True" {let name: String; println!("Name: "); scan!("{}", name); println!("{}", name)};
+
 
 }
 
