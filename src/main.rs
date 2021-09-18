@@ -127,10 +127,37 @@ fn add_account() {
         settings
         .try_into::<HashMap<String, String>>()
         .unwrap();
-    //println!("{:#?}", config); //prints the config
-    let name: String = if config["ask_name"] == "True" {let name: String; println!("Name: "); scan!("{}", name); println!("{}", name); name } else {let no: String = "".to_string(); no};
-    let username: String = if config["ask_username"] == "True" {let username: String; println!("@userame: "); scan!("{}", username); let username: String = if username.starts_with("@") {username} else {let username: String = "@".to_string() + &username; username }; println!("{}", username); username} else {let no: String = "".to_string(); no};
-    println!("{}, {}, ", name, username);
+    // println!("{:#?}", config); //prints the config
+    //check config file for each available field and if set as True ask for the info
+    let name: String = if config["ask_name"] == "True" { //start setting the name variable
+        let name: String;
+        println!("Name: ");
+        scan!("{}", name); //ask for Name input and saves as a name variable
+        println!("{}", name);
+        name } else {
+        let no: String = "".to_string(); //saves an empty string as a no variable that'll be the name variable if config tells not to ask for it
+        no }; //end of name
+    let username: String = if config["ask_username"] == "True" { //start setting the username variable
+        let username: String;
+        println!("@userame: ");
+        scan!("{}", username); //ask for username input
+        let username: String = if username.starts_with("@") {username} else { //checks if an @ is at the start of the username
+            let username: String = "@".to_string() + &username; username }; //adds an @ to the start of the username if the user didn't do it yet
+            println!("{}", username);
+            username} else {
+                let no: String = "".to_string(); //keeps username empty if config tells not to ask for it
+                no }; // end of username
+    let email: String = if config["ask_email"] == "True" { //start setting the email variable
+        let email: String;
+        println!("E-mail: ");
+        scan!("{}", email);//ask for input
+        if email.contains("@") {} else {println!("NOT AN E-MAIL");//check if has an @, do nothing if it does
+        std::process::exit(1);}//close Sam with code 1 if doesnt have an @ after printing NOT AN EMAIL
+        println!("{}", email);
+        email } else {
+            let no: String = "".to_string(); //leave email empty if config tells not to ask for it
+            no }; //end of email
+    println!("{}, {}, {}", name, username, email);
 }
 
 
