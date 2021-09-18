@@ -26,6 +26,8 @@ fn main() {
         sam_help(ver);
     } else if option == "init" {
         init();
+    } else if option == "add-account" {
+        add_account()
     }
     println!("WORK IN PROGRESS");
 }
@@ -49,7 +51,7 @@ fn checkifinstalled() {
     let installed = Path::new("/samantha_root").exists();
     if installed == true {
         let samantha_root = fs::read_to_string("/samantha_root");
-        println!("Samantha is installed and her root is at {:?}", samantha_root);
+        println!("Samantha is installed and her root is at {:?}", samantha_root.unwrap());
     } else {
         println!("Samantha is not installed");
     }
@@ -109,6 +111,22 @@ fn rootindicator(samantha_root: String) -> std::io::Result<()> {
 
 // Create new account
 fn add_account() {
+    //Get the stuff in Config.toml
+    let samantha_root = fs::read_to_string("/samantha_root").unwrap();
+    let mut settings = Config::default();
+    let configpath = samantha_root.to_string() + &"/Config.toml".to_string();
+    settings
+        .merge(glob(&configpath)
+            .unwrap()
+            .map(|path| config::File::from(path.unwrap()))
+            .collect::<Vec<_>>())
+        .unwrap();
+        // Save the Config.toml as a config variable as a HashMap
+    let mut config =
+        settings
+        .try_into::<HashMap<String, String>>()
+        .unwrap();
+    println!("{:#?}", config); //prints the config
 
 }
 
