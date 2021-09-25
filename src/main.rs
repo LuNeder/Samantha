@@ -14,6 +14,8 @@ use glob::glob; // required to get .toml files
 use std::io; // a bunch of stuff
 use std::io::prelude::*; //create text files
 use text_io::scan; //ask for input
+use bcrypt::{DEFAULT_COST, hash, verify}; // encrypt password
+use rpassword; // safe password input
 
 
 fn main() {
@@ -181,7 +183,6 @@ fn add_account() {
         gender } else {
             let no: String = "".to_string(); //leave empty if config tells not to ask for it
             no }; //end of gender
-
     let birthday: String = if config["ask_birthday"] == "True" { //start setting the birthday variable
         let birthday: String;
         println!("Birthday: ");
@@ -190,8 +191,12 @@ fn add_account() {
         birthday } else {
             let no: String = "".to_string(); //leave empty if config tells not to ask for it
             no }; //end of birthday
+    let password: String = rpassword::read_password_from_tty(Some("Password: ")).unwrap();
+    let password: String = hash(password, DEFAULT_COST).unwrap();
 
-    println!("{}, {}, {}, {}", name, username, email, phone);
+    println!("{}, {}, {}, {}, {}, {}, {}, {}", name, username, email, phone, pronouns, gender, birthday, password);
+
+
 }
 
 
