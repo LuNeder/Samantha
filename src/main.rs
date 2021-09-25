@@ -191,7 +191,8 @@ fn add_account() {
         birthday } else {
             let no: String = "".to_string(); //leave empty if config tells not to ask for it
             no }; //end of birthday
-    let password: String = rpassword::read_password_from_tty(Some("Password: ")).unwrap();
+    let password: String;
+    scan!("{}", password);
     let password: String = hash(password, DEFAULT_COST).unwrap();
 
     println!("{}, {}, {}, {}, {}, {}, {}, {}", name, username, email, phone, pronouns, gender, birthday, password);
